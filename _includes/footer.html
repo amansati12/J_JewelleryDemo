@@ -1,0 +1,46 @@
+<footer class="footer section-dark">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand footer-brand" href="{{ '/' | relative_url }}"><span class="brand-mark">A</span> Aurelia Jewels</a>
+        <p class="mt-3">A premium jewellery showroom crafting certified gold jewellery, diamond jewellery, bridal jewellery, and custom jewellery for moments that deserve permanence.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h3 class="footer-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="{{ '/collections/' | relative_url }}">Collections</a></li>
+          <li><a href="{{ '/offers/' | relative_url }}">Offers</a></li>
+          <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h3 class="footer-title">Jewellery</h3>
+        <ul class="footer-links">
+          <li>Gold Necklace Sets</li>
+          <li>Diamond Rings</li>
+          <li>Bridal Jewellery</li>
+          <li>Bangles and Earrings</li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h3 class="footer-title">Contact</h3>
+        <p>{{ site.business.address }}</p>
+        <p><a href="tel:{{ site.business.phone | remove: ' ' }}">{{ site.business.phone }}</a><br><a href="mailto:{{ site.business.email }}">{{ site.business.email }}</a></p>
+        <div class="social-links">
+          <a href="{{ site.business.instagram }}" aria-label="Instagram">IG</a>
+          <a href="{{ site.business.facebook }}" aria-label="Facebook">FB</a>
+          <a href="{{ site.business.pinterest }}" aria-label="Pinterest">PT</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.business.name }}. All rights reserved.</p>
+      <p>Certified purity. Crafted trust. Designed for celebration.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="floating-whatsapp" href="https://wa.me/{{ site.business.whatsapp }}?text=Hello%20Aurelia%20Jewels%2C%20I%20would%20like%20to%20inquire%20about%20jewellery." aria-label="WhatsApp inquiry">WA</a>
+<a class="floating-call" href="tel:{{ site.business.phone | remove: ' ' }}" aria-label="Call showroom">Call</a>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>

@@ -1,0 +1,43 @@
+{% assign meta_title = page.title | default: site.title %}
+{% assign meta_description = page.description | default: site.description %}
+{% assign meta_image = page.image | default: '/assets/images/hero-jewellery.jpg' %}
+<title>{{ meta_title }} | {{ site.title }}</title>
+<meta name="description" content="{{ meta_description }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ meta_title }} | {{ site.title }}">
+<meta property="og:description" content="{{ meta_description }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ meta_image | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta_title }} | {{ site.title }}">
+<meta name="twitter:description" content="{{ meta_description }}">
+<meta name="twitter:image" content="{{ meta_image | absolute_url }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JewelryStore",
+  "name": "{{ site.business.name }}",
+  "description": "{{ site.description }}",
+  "image": "{{ '/assets/images/showroom.jpg' | absolute_url }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "telephone": "{{ site.business.phone }}",
+  "email": "{{ site.business.email }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.business.address }}",
+    "addressCountry": "IN"
+  },
+  "priceRange": "$$$",
+  "sameAs": [
+    "{{ site.business.instagram }}",
+    "{{ site.business.facebook }}",
+    "{{ site.business.pinterest }}"
+  ]
+}
+</script>

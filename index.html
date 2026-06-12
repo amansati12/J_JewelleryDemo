@@ -1,0 +1,136 @@
+---
+layout: default
+title: "Premium Jewellery Store for Gold, Diamond and Bridal Jewellery"
+description: "Discover certified gold jewellery, diamond jewellery, bridal jewellery, rings, bangles, earrings, necklaces, festive jewellery offers, and custom jewellery at Aurelia Jewels."
+image: "/assets/images/hero-jewellery.jpg"
+---
+
+<section class="hero" style="background-image: linear-gradient(90deg, rgba(9,7,4,.88), rgba(9,7,4,.42)), url('{{ "/assets/images/hero-jewellery.jpg" | relative_url }}');">
+  <!-- Replace assets/images/hero-jewellery.jpg with your premium jewellery showroom or product banner. -->
+  <div class="container">
+    <div class="row min-vh-100 align-items-center">
+      <div class="col-lg-7 reveal">
+        <p class="eyebrow">Certified luxury jewellery showroom</p>
+        <h1>Jewellery crafted for promises, celebrations, and heirloom memories.</h1>
+        <p class="hero-text">Explore gold jewellery, diamond jewellery, bridal jewellery, custom jewellery, rings, bangles, necklaces, earrings, and wedding jewellery designed with purity, precision, and personal attention.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="{{ '/collections/' | relative_url }}">Explore Collections</a>
+          <a class="btn btn-outline-light" href="{{ '/contact/' | relative_url }}">Book a Visit</a>
+        </div>
+        <div class="trust-row">
+          <span>BIS Hallmarked Gold</span>
+          <span>Certified Diamonds</span>
+          <span>Custom Designs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="section-heading reveal">
+      <p class="eyebrow">Our signature collections</p>
+      <h2>Designed for every celebration</h2>
+      <p>From everyday elegance to wedding jewellery that becomes part of family history, every piece is curated with balance, purity, and emotion.</p>
+    </div>
+    <div class="row g-4">
+      {% assign collections = "Gold Jewellery|assets/images/gold-necklace.jpg|Necklaces, chains and temple-inspired sets with hallmarked purity.;Diamond Jewellery|assets/images/diamond-ring.jpg|Rings, solitaires and earrings with certified sparkle.;Bridal Jewellery|assets/images/bridal-jewellery.jpg|Layered bridal sets for ceremonies, receptions and heirloom moments.;Bangles & Earrings|assets/images/bangles.jpg|Classic bangles, modern cuffs and graceful earrings." | split: ";" %}
+      {% for item in collections %}
+        {% assign data = item | split: "|" %}
+        <div class="col-md-6 col-lg-3 reveal">
+          <article class="lux-card product-card">
+            <img src="{{ data[1] | relative_url }}" alt="{{ data[0] }} collection at Aurelia Jewels">
+            <div class="card-body">
+              <h3>{{ data[0] }}</h3>
+              <p>{{ data[2] }}</p>
+              <a href="{{ '/collections/' | relative_url }}">View Collection</a>
+            </div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-pad section-cream">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal">
+        <img class="feature-img" src="{{ '/assets/images/bridal-jewellery.jpg' | relative_url }}" alt="Bridal jewellery necklace and bangles">
+      </div>
+      <div class="col-lg-6 reveal">
+        <p class="eyebrow">Bridal jewellery appointment</p>
+        <h2>Wedding jewellery styled around your story</h2>
+        <p>Our bridal specialists help you pair necklaces, bangles, earrings, rings and statement pieces with your outfit, ceremony, skin tone, and family traditions. Choose ready designs or commission custom jewellery with sketches, gemstone guidance, and transparent pricing.</p>
+        <ul class="check-list">
+          <li>Traditional gold bridal sets and contemporary diamond jewellery</li>
+          <li>Certified stones, purity documentation and lifetime service support</li>
+          <li>Private appointment experience for families and wedding planners</li>
+        </ul>
+        <a class="btn btn-dark-gold" href="{{ '/contact/' | relative_url }}">Schedule Bridal Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad section-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-5 reveal">
+        <p class="eyebrow">Festival jewellery offers</p>
+        <h2>Celebrate with limited-period jewellery offers</h2>
+        <p>Enjoy seasonal benefits on gold jewellery, diamond jewellery, bangles, earrings, rings and necklace sets during weddings, festivals, anniversaries and gifting occasions.</p>
+        <a class="btn btn-gold" href="{{ '/offers/' | relative_url }}">See Current Offers</a>
+      </div>
+      <div class="col-lg-7 reveal">
+        <div class="offer-strip">
+          <div><strong>0%</strong><span>making charge options</span></div>
+          <div><strong>100%</strong><span>certified jewellery</span></div>
+          <div><strong>24h</strong><span>custom design callback</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="section-heading reveal">
+      <p class="eyebrow">Customer voices</p>
+      <h2>Trusted by families for life’s finest milestones</h2>
+    </div>
+    <div id="testimonialCarousel" class="carousel slide reveal" data-bs-ride="carousel">
+      <div class="carousel-inner testimonial-shell">
+        <div class="carousel-item active">
+          <blockquote>“The bridal jewellery consultation felt personal, calm and transparent. Every diamond certificate and gold purity detail was explained clearly.”</blockquote>
+          <cite>Priya Mehta, Bride</cite>
+        </div>
+        <div class="carousel-item">
+          <blockquote>“Aurelia created a custom necklace for our anniversary. The craftsmanship, finishing and service made it feel truly special.”</blockquote>
+          <cite>Rohan Shah, Customer</cite>
+        </div>
+        <div class="carousel-item">
+          <blockquote>“Their jewellery offers were genuine, and the showroom team helped us choose bangles and earrings within budget without pressure.”</blockquote>
+          <cite>Ananya Rao, Customer</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad section-newsletter">
+  <div class="container reveal">
+    <div class="newsletter-panel">
+      <div>
+        <p class="eyebrow">Private previews</p>
+        <h2>Receive new collection previews and festive offers.</h2>
+      </div>
+      <form class="newsletter-form">
+        <label class="visually-hidden" for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" type="email" placeholder="Enter your email" required>
+        <button class="btn btn-gold" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>

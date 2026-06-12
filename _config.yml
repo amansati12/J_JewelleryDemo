@@ -1,0 +1,46 @@
+title: "Aurelia Jewels"
+description: "Premium jewellery store and showroom for gold jewellery, diamond jewellery, bridal jewellery, custom jewellery, rings, bangles, necklaces, earrings, and festive jewellery offers."
+url: ""
+baseurl: ""
+lang: "en"
+timezone: "Asia/Kolkata"
+
+permalink: /blog/:title/
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+      image: "/assets/images/gold-necklace.jpg"
+
+business:
+  name: "Aurelia Jewels"
+  phone: "+91 98765 43210"
+  whatsapp: "919876543210"
+  email: "hello@aureliajewels.example"
+  address: "Royal Avenue, City Center, Mumbai, Maharashtra 400001"
+  map_url: "https://maps.google.com"
+  instagram: "https://instagram.com"
+  facebook: "https://facebook.com"
+  pinterest: "https://pinterest.com"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - work
+  - outputs
+  - README.md
