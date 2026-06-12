@@ -26,6 +26,47 @@
     backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
+  const heroVideos = Array.from(document.querySelectorAll(".hero-video"));
+  const heroDots = Array.from(document.querySelectorAll("[data-hero-slide]"));
+  let activeHeroVideo = 0;
+  let heroTimer;
+
+  function showHeroVideo(index) {
+    if (!heroVideos.length) return;
+    activeHeroVideo = (index + heroVideos.length) % heroVideos.length;
+
+    heroVideos.forEach((video, videoIndex) => {
+      const isActive = videoIndex === activeHeroVideo;
+      video.classList.toggle("active", isActive);
+      if (isActive) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+
+    heroDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("active", dotIndex === activeHeroVideo);
+    });
+  }
+
+  function startHeroSlider() {
+    if (heroVideos.length < 2) return;
+    clearInterval(heroTimer);
+    heroTimer = setInterval(() => showHeroVideo(activeHeroVideo + 1), 6500);
+  }
+
+  heroDots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      showHeroVideo(Number(dot.dataset.heroSlide));
+      startHeroSlider();
+    });
+  });
+
+  showHeroVideo(0);
+  startHeroSlider();
+
   const revealItems = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver(
     (entries) => {

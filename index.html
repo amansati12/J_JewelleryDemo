@@ -5,8 +5,31 @@ description: "Discover certified gold jewellery, diamond jewellery, bridal jewel
 image: "/assets/images/hero-jewellery.jpg"
 ---
 
-<section class="hero" style="background-image: linear-gradient(90deg, rgba(9,7,4,.88), rgba(9,7,4,.42)), url('{{ "/assets/images/hero-jewellery.jpg" | relative_url }}');">
-  <!-- Replace assets/images/hero-jewellery.jpg with your premium jewellery showroom or product banner. -->
+<section class="hero hero-video-slider" aria-label="Aurelia Jewels luxury jewellery video showcase">
+  <!--
+    Replace these video files with your own short MP4 clips:
+    assets/videos/hero-jewellery-1.mp4
+    assets/videos/hero-jewellery-2.mp4
+    assets/videos/hero-jewellery-3.mp4
+    Keep the poster images as fallbacks for slow networks and mobile browsers.
+  -->
+  <div class="hero-media" aria-hidden="true">
+    <video class="hero-video active" muted loop playsinline preload="metadata" poster="{{ '/assets/images/hero-jewellery.jpg' | relative_url }}">
+      <source src="{{ '/assets/videos/hero-jewellery-1.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <video class="hero-video" muted loop playsinline preload="metadata" poster="{{ '/assets/images/bridal-jewellery.jpg' | relative_url }}">
+      <source src="{{ '/assets/videos/hero-jewellery-2.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <video class="hero-video" muted loop playsinline preload="metadata" poster="{{ '/assets/images/diamond-ring.jpg' | relative_url }}">
+      <source src="{{ '/assets/videos/hero-jewellery-3.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-dots" aria-label="Hero video slides">
+    <button class="active" type="button" data-hero-slide="0" aria-label="Show gold jewellery video"></button>
+    <button type="button" data-hero-slide="1" aria-label="Show bridal jewellery video"></button>
+    <button type="button" data-hero-slide="2" aria-label="Show diamond jewellery video"></button>
+  </div>
   <div class="container">
     <div class="row min-vh-100 align-items-center">
       <div class="col-lg-7 reveal">
